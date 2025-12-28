@@ -7,27 +7,30 @@ const subtract = function(a, b) {
 };
 
 const sum = function(array) {
-  let result = 0;
-	for (let i = 0; i < array.length; i++){
-    result += array[i];
-  }
-  return result;
+  return array.reduce((acc, current) => acc + current, 0);
 };
 
 const multiply = function(array) {
-  let result = 0;
-	for (let i = 0; i < array.length; i++){
-    result *= array[i]; /**this line doesnt work, research multyplying arrays */
-  }
-  return result;
+	return array.reduce((acc, current) => acc * current);
 };
 
-const power = function() {
-	
+const power = function(a, b) {
+  return a ** b;
 };
 
-const factorial = function() {
-	
+const factorial = function(number) {
+
+  if (number === 0) {
+    return 1;
+  };
+
+  let arr = [];
+	while (number > 0) {
+    arr.push(number);
+    number --;
+  };
+
+  return arr.reduce((acc, curr) => acc * curr);
 };
 
 // Do not edit below this line
